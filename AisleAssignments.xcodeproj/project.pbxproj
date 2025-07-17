@@ -14,6 +14,7 @@
 		701AE28E2E2961F90065ABB6 /* AisleAssignmentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701AE28D2E2961F90065ABB6 /* AisleAssignmentsTests.swift */; };
 		701AE2982E2961F90065ABB6 /* AisleAssignmentsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701AE2972E2961F90065ABB6 /* AisleAssignmentsUITests.swift */; };
 		701AE29A2E2961F90065ABB6 /* AisleAssignmentsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701AE2992E2961F90065ABB6 /* AisleAssignmentsUITestsLaunchTests.swift */; };
+		701AE2A92E29633E0065ABB6 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701AE2A82E29633E0065ABB6 /* AuthResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		701AE2932E2961F90065ABB6 /* AisleAssignmentsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AisleAssignmentsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		701AE2972E2961F90065ABB6 /* AisleAssignmentsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AisleAssignmentsUITests.swift; sourceTree = "<group>"; };
 		701AE2992E2961F90065ABB6 /* AisleAssignmentsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AisleAssignmentsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		701AE2A82E29633E0065ABB6 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		701AE27B2E2961F80065ABB6 /* AisleAssignments */ = {
 			isa = PBXGroup;
 			children = (
+				701AE2A62E2962AC0065ABB6 /* Models */,
 				701AE27C2E2961F80065ABB6 /* AisleAssignmentsApp.swift */,
 				701AE27E2E2961F80065ABB6 /* ContentView.swift */,
 				701AE2802E2961F90065ABB6 /* Assets.xcassets */,
@@ -125,6 +128,14 @@
 				701AE2992E2961F90065ABB6 /* AisleAssignmentsUITestsLaunchTests.swift */,
 			);
 			path = AisleAssignmentsUITests;
+			sourceTree = "<group>";
+		};
+		701AE2A62E2962AC0065ABB6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				701AE2A82E29633E0065ABB6 /* AuthResponse.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				701AE27F2E2961F80065ABB6 /* ContentView.swift in Sources */,
+				701AE2A92E29633E0065ABB6 /* AuthResponse.swift in Sources */,
 				701AE27D2E2961F80065ABB6 /* AisleAssignmentsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
