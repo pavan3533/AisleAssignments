@@ -15,6 +15,8 @@
 		701AE2982E2961F90065ABB6 /* AisleAssignmentsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701AE2972E2961F90065ABB6 /* AisleAssignmentsUITests.swift */; };
 		701AE29A2E2961F90065ABB6 /* AisleAssignmentsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701AE2992E2961F90065ABB6 /* AisleAssignmentsUITestsLaunchTests.swift */; };
 		701AE2A92E29633E0065ABB6 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701AE2A82E29633E0065ABB6 /* AuthResponse.swift */; };
+		701AE2AC2E2963E40065ABB6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701AE2AB2E2963E40065ABB6 /* NetworkManager.swift */; };
+		701AE2AE2E2964000065ABB6 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701AE2AD2E2964000065ABB6 /* APIService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		701AE2972E2961F90065ABB6 /* AisleAssignmentsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AisleAssignmentsUITests.swift; sourceTree = "<group>"; };
 		701AE2992E2961F90065ABB6 /* AisleAssignmentsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AisleAssignmentsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		701AE2A82E29633E0065ABB6 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
+		701AE2AB2E2963E40065ABB6 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		701AE2AD2E2964000065ABB6 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				701AE2A62E2962AC0065ABB6 /* Models */,
+				701AE2AA2E2963A50065ABB6 /* Network */,
 				701AE27C2E2961F80065ABB6 /* AisleAssignmentsApp.swift */,
 				701AE27E2E2961F80065ABB6 /* ContentView.swift */,
 				701AE2802E2961F90065ABB6 /* Assets.xcassets */,
@@ -136,6 +141,15 @@
 				701AE2A82E29633E0065ABB6 /* AuthResponse.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		701AE2AA2E2963A50065ABB6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				701AE2AB2E2963E40065ABB6 /* NetworkManager.swift */,
+				701AE2AD2E2964000065ABB6 /* APIService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +282,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				701AE2AC2E2963E40065ABB6 /* NetworkManager.swift in Sources */,
+				701AE2AE2E2964000065ABB6 /* APIService.swift in Sources */,
 				701AE27F2E2961F80065ABB6 /* ContentView.swift in Sources */,
 				701AE2A92E29633E0065ABB6 /* AuthResponse.swift in Sources */,
 				701AE27D2E2961F80065ABB6 /* AisleAssignmentsApp.swift in Sources */,
