@@ -5,8 +5,6 @@
 //  Created by Pavan Javali on 18/07/25.
 //
 
-import Foundation
-
 import SwiftUI
 
 struct OTPView: View {
@@ -21,47 +19,75 @@ struct OTPView: View {
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading, spacing: 16) {
-                HStack {
+                
+                // Phone number with pencil icon (from Assets)
+                HStack(spacing: 6) {
                     Text(viewModel.phoneNumber)
-                        .font(.inter(size: 16))
-                    Image(systemName: "pencil")
-                }
+                        .font(.inter(size: 18, weight: .medium))
+                        .foregroundColor(.black)
 
+                    Image("pencil")
+                        .resizable()
+                        .frame(width: 14, height: 14)
+                        .foregroundColor(.black)
+                }
+                .padding(.top, 80)
+
+                // OTP Heading
                 Text("Enter The\nOTP")
-                    .font(.inter(size: 28, weight: .bold))
+                    .font(.inter(size: 30, weight: .bold))
+                    .foregroundColor(.black)
 
-                TextField("1234", text: $viewModel.otpCode)
-                    .keyboardType(.numberPad)
-                    .padding()
-                    .background(RoundedRectangle(cornerRadius: 8).stroke())
-
-                if let error = viewModel.errorMessage {
-                    Text(error).foregroundColor(.red)
+                // OTP Input Field
+                HStack {
+                    TextField("1234", text: $viewModel.otpCode)
+                        .keyboardType(.numberPad)
+                        .font(.inter(size: 16, weight: .medium))
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 24)
+                        .padding(.vertical, 10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(Color.black, lineWidth: 1)
+                        )
+                        .frame(width: 80)
                 }
 
-                HStack {
+                // Error Text
+                if let error = viewModel.errorMessage {
+                    Text(error)
+                        .foregroundColor(.red)
+                        .font(.inter(size: 14))
+                }
+
+                // Continue Button and Timer
+                HStack(spacing: 12) {
                     Button(action: {
                         viewModel.verifyOTP()
                     }) {
                         Text("Continue")
+                            .font(.inter(size: 14, weight: .bold))
                             .foregroundColor(.black)
-                            .font(.inter(size: 16, weight: .bold))
-                            .padding()
-                            .frame(maxWidth: .infinity)
+                            .frame(width: 100, height: 34)
                             .background(Color.yellowPrimary)
-                            .cornerRadius(25)
+                            .cornerRadius(20)
                     }
 
                     Text(String(format: "00:%02d", secondsRemaining))
-                        .font(.inter(size: 16))
-                        .padding(.leading)
+                        .font(.inter(size: 14, weight: .bold)) // made bold
+                        .foregroundColor(.black)
                 }
 
+                Spacer()
+
+                // Navigation to Notes screen
                 NavigationLink(destination: NotesView(), isActive: $viewModel.showNotesView) {
                     EmptyView()
                 }
             }
-            .padding()
+            .padding(.leading, 36)
+            .padding(.trailing, 16)
+            .frame(maxWidth: .infinity, alignment: .leading)
             .onAppear { startTimer() }
             .onDisappear { timer?.invalidate() }
         }
@@ -81,4 +107,3 @@ struct OTPView: View {
 #Preview {
     OTPView(phoneNumber: "+91 9876543212")
 }
-
