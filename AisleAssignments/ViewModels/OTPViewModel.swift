@@ -9,22 +9,18 @@ import Foundation
 import Combine
 
 final class OTPViewModel: ObservableObject {
-    // Input
     let phoneNumber: String
     @Published var otpCode = ""
-
-    // Output
     @Published var authToken: String?
     @Published var isLoading = false
     @Published var errorMessage: String?
     @Published var showNotesView = false
     @Published var secondsRemaining = 59
 
-    private var cancellables = Set<AnyCancellable>()
     private var timer: Timer?
-    private let service: OTPService
+    private let service: OTPServiceProtocol
 
-    init(phoneNumber: String, service: OTPService = OTPService()) {
+    init(phoneNumber: String, service: OTPServiceProtocol = OTPService()) {
         self.phoneNumber = phoneNumber
         self.service = service
         startTimer()
@@ -36,16 +32,16 @@ final class OTPViewModel: ObservableObject {
 
         service.verifyOTP(phone: phoneNumber, code: otpCode) { [weak self] result in
             guard let self = self else { return }
-            self.isLoading = false
-
-            switch result {
-            case .success(let token):
-                self.authToken = token
-                UserDefaults.standard.set(token, forKey: "authToken")
-                self.showNotesView = true
-
-            case .failure(let error):
-                self.errorMessage = error.localizedDescription
+            DispatchQueue.main.async {
+                self.isLoading = false
+                switch result {
+                case .success(let token):
+                    self.authToken = token
+                    UserDefaults.standard.set(token, forKey: "authToken")
+                    self.showNotesView = true
+                case .failure(let error):
+                    self.errorMessage = error.localizedDescription
+                }
             }
         }
     }
@@ -53,13 +49,11 @@ final class OTPViewModel: ObservableObject {
     private func startTimer() {
         secondsRemaining = 59
         timer?.invalidate()
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
-            guard let self = self else { return }
-
-            if self.secondsRemaining > 0 {
-                self.secondsRemaining -= 1
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
+            if self?.secondsRemaining ?? 0 > 0 {
+                self?.secondsRemaining -= 1
             } else {
-                self.timer?.invalidate()
+                self?.timer?.invalidate()
             }
         }
     }

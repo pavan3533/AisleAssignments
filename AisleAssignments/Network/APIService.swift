@@ -8,7 +8,12 @@
 import Foundation
 import Combine
 
-final class APIService {
+// MARK: - Protocol Definition - Mock Testing
+protocol AuthServiceProtocol {
+    func sendPhoneNumber(_ number: String) -> AnyPublisher<AuthResponse, Error>
+}
+
+final class APIService: AuthServiceProtocol {
     static let shared = APIService()
     private let baseURL = "https://app.aisle.co/V1"
     
@@ -16,7 +21,7 @@ final class APIService {
         guard let url = URL(string: "\(baseURL)/users/phone_number_login") else {
             return Fail(error: NetworkError.invalidURL).eraseToAnyPublisher()
         }
-        
+
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         let body = ["number": number]

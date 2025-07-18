@@ -37,6 +37,12 @@
 		70ABF6442E2AAA2F00C34148 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF6432E2AAA2F00C34148 /* PrimaryButton.swift */; };
 		70ABF6462E2AAB2900C34148 /* ErrorTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF6452E2AAB2900C34148 /* ErrorTextView.swift */; };
 		70ABF6482E2AABA100C34148 /* RoundedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF6472E2AABA100C34148 /* RoundedTextView.swift */; };
+		70ABF64A2E2AB5F500C34148 /* OTPViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF6492E2AB5F500C34148 /* OTPViewModelTests.swift */; };
+		70ABF64C2E2AB9DA00C34148 /* MockOTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF64B2E2AB9DA00C34148 /* MockOTPService.swift */; };
+		70ABF64E2E2ABCB700C34148 /* MockAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF64D2E2ABCB700C34148 /* MockAuthService.swift */; };
+		70ABF6522E2ABD4000C34148 /* AuthViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF6512E2ABD4000C34148 /* AuthViewModelTests.swift */; };
+		70ABF6542E2ABE1700C34148 /* MockNotesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF6532E2ABE1700C34148 /* MockNotesService.swift */; };
+		70ABF6562E2ABE4900C34148 /* NotesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF6552E2ABE4900C34148 /* NotesViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +97,12 @@
 		70ABF6432E2AAA2F00C34148 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		70ABF6452E2AAB2900C34148 /* ErrorTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTextView.swift; sourceTree = "<group>"; };
 		70ABF6472E2AABA100C34148 /* RoundedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextView.swift; sourceTree = "<group>"; };
+		70ABF6492E2AB5F500C34148 /* OTPViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModelTests.swift; sourceTree = "<group>"; };
+		70ABF64B2E2AB9DA00C34148 /* MockOTPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockOTPService.swift; sourceTree = "<group>"; };
+		70ABF64D2E2ABCB700C34148 /* MockAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthService.swift; sourceTree = "<group>"; };
+		70ABF6512E2ABD4000C34148 /* AuthViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModelTests.swift; sourceTree = "<group>"; };
+		70ABF6532E2ABE1700C34148 /* MockNotesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNotesService.swift; sourceTree = "<group>"; };
+		70ABF6552E2ABE4900C34148 /* NotesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +178,8 @@
 		701AE28C2E2961F90065ABB6 /* AisleAssignmentsTests */ = {
 			isa = PBXGroup;
 			children = (
+				70ABF6502E2ABD0E00C34148 /* MockModelTests */,
+				70ABF64F2E2ABCE200C34148 /* MockService */,
 				701AE28D2E2961F90065ABB6 /* AisleAssignmentsTests.swift */,
 			);
 			path = AisleAssignmentsTests;
@@ -324,6 +338,26 @@
 				70ABF60A2E2A016200C34148 /* PhoneNumberView.swift */,
 			);
 			path = PhoneNumber;
+			sourceTree = "<group>";
+		};
+		70ABF64F2E2ABCE200C34148 /* MockService */ = {
+			isa = PBXGroup;
+			children = (
+				70ABF64D2E2ABCB700C34148 /* MockAuthService.swift */,
+				70ABF64B2E2AB9DA00C34148 /* MockOTPService.swift */,
+				70ABF6532E2ABE1700C34148 /* MockNotesService.swift */,
+			);
+			path = MockService;
+			sourceTree = "<group>";
+		};
+		70ABF6502E2ABD0E00C34148 /* MockModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				70ABF6492E2AB5F500C34148 /* OTPViewModelTests.swift */,
+				70ABF6512E2ABD4000C34148 /* AuthViewModelTests.swift */,
+				70ABF6552E2ABE4900C34148 /* NotesViewModelTests.swift */,
+			);
+			path = MockModelTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -488,7 +522,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70ABF64A2E2AB5F500C34148 /* OTPViewModelTests.swift in Sources */,
+				70ABF6562E2ABE4900C34148 /* NotesViewModelTests.swift in Sources */,
+				70ABF64E2E2ABCB700C34148 /* MockAuthService.swift in Sources */,
 				701AE28E2E2961F90065ABB6 /* AisleAssignmentsTests.swift in Sources */,
+				70ABF6522E2ABD4000C34148 /* AuthViewModelTests.swift in Sources */,
+				70ABF64C2E2AB9DA00C34148 /* MockOTPService.swift in Sources */,
+				70ABF6542E2ABE1700C34148 /* MockNotesService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

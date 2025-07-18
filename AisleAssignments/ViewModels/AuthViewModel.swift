@@ -9,19 +9,23 @@ import Foundation
 import Combine
 
 final class AuthViewModel: ObservableObject {
-    // MARK: - Phone Number Flow
     @Published var phoneNumber = ""
     @Published var showOTPView = false
     @Published var isLoading = false
     @Published var errorMessage: String?
     
     private var cancellables = Set<AnyCancellable>()
+    private let service: AuthServiceProtocol
     
-    // MARK: - API: Phone Number
+    init(service: AuthServiceProtocol = APIService.shared) {
+        self.service = service
+    }
+
     func sendPhoneNumber() {
         isLoading = true
         let fullNumber = "+91\(phoneNumber)"
-        APIService.shared.sendPhoneNumber(fullNumber)
+        
+        service.sendPhoneNumber(fullNumber)
             .sink { [weak self] completion in
                 self?.isLoading = false
                 if case let .failure(error) = completion {
@@ -37,4 +41,3 @@ final class AuthViewModel: ObservableObject {
             .store(in: &cancellables)
     }
 }
-
