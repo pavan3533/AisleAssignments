@@ -12,4 +12,8 @@ extension Font {
     static func inter(size: CGFloat, weight: Font.Weight = .regular) -> Font {
         return .custom("Inter", size: size) 
     }
+    
+    static func gilroy(size: CGFloat, weight: Font.Weight = .regular) -> Font {
+            return .custom("Gilroy", size: size)
+    }
 }

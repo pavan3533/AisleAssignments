@@ -5,102 +5,102 @@
 //  Created by Pavan Javali on 18/07/25.
 //
 
-import Foundation
-
 import SwiftUI
 
 struct NotesView: View {
-    @StateObject private var viewModel = NotesViewModel()
+    private let mockProfiles: [Profile] = [
+        Profile(id: 1, name: "Meena", age: 23, avatar: "Meena"),
+        Profile(id: 2, name: "Teena", age: 24, avatar: "Teena"),
+        Profile(id: 3, name: "Beena", age: 25, avatar: "Beena")
+    ]
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
+        VStack(spacing: 0) {
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(alignment: .center, spacing: 16) {
 
-                // Header
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("Notes")
-                        .font(.inter(size: 28, weight: .bold))
+                    // MARK: - Header
+                    VStack(spacing: 8) {
+                        Text("Notes")
+                            .font(.inter(size: 27, weight: .bold))
+                            .frame(maxWidth: .infinity, alignment: .center)
 
-                    Text("Personal messages to you")
-                        .font(.inter(size: 16))
-                        .foregroundColor(.gray)
-                }
+                        Text("Personal messages to you")
+                            .font(.inter(size: 18, weight: .semibold))
+                            .foregroundColor(.black)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                    }
+                    .padding(.top, 12)
 
-                // Featured Profile
-                if let firstProfile = viewModel.profiles.first {
-                    VStack(alignment: .leading, spacing: 12) {
-                        AsyncImage(url: URL(string: firstProfile.avatar)) { image in
-                            image
+                    // MARK: - Meena Featured Card
+                    Image("Meena")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 344, height: 344)
+                        .clipped()
+                        .cornerRadius(20)
+                        .padding(.horizontal, 16)
+                        .padding(.top, 4)
+
+                    // MARK: - Interested In You Section
+                    HStack(alignment: .bottom) {
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Interested In You")
+                                .font(.gilroy(size: 22, weight: .black))
+                                .foregroundColor(.black)
+                                .padding(.leading, 40)
+
+                            Text("Premium members can\nview all their likes at once")
+                                .font(.gilroy(size: 15))
+                                .foregroundColor(.graySubtle)
+                                .padding(.leading, 40)
+                        }
+
+                        Spacer()
+
+                        Button(action: {}) {
+                            Text("Upgrade")
+                                .font(.gilroy(size: 15, weight: .bold))
+                                .foregroundColor(.black)
+                                .padding(.horizontal, 24)
+                                .padding(.vertical, 16)
+                                .background(Color.yellowPrimaryLook)
+                                .clipShape(Capsule())
+                        }
+                        .padding(.trailing, 16)
+                    }
+
+                    // MARK: - Teena & Beena Cards
+                    HStack(spacing: 8) {
+                        ForEach(mockProfiles.dropFirst().prefix(2)) { profile in
+                            Image(profile.avatar)
                                 .resizable()
                                 .scaledToFill()
-                        } placeholder: {
-                            Color.gray
-                        }
-                        .frame(height: 280)
-                        .clipped()
-                        .cornerRadius(18)
-
-                        Text("\(firstProfile.name), \(firstProfile.age)")
-                            .font(.inter(size: 22, weight: .bold))
-
-                        Text("Tap to review 50+ notes")
-                            .font(.inter(size: 14))
-                            .foregroundColor(.gray)
-                    }
-                }
-
-                Divider()
-
-                // Interested In You Section
-                VStack(alignment: .leading, spacing: 12) {
-                    Text("Interested In You")
-                        .font(.inter(size: 18, weight: .bold))
-
-                    Text("Premium members can\nview all their likes at once")
-                        .font(.inter(size: 14))
-                        .foregroundColor(.gray)
-
-                    Button(action: {
-                        print("Upgrade tapped")
-                    }) {
-                        Text("Upgrade")
-                            .font(.inter(size: 16, weight: .bold))
-                            .foregroundColor(.black)
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(Color.yellowPrimary)
-                            .cornerRadius(25)
-                    }
-
-                    // Horizontal Profile List
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 20) {
-                            ForEach(viewModel.profiles.dropFirst().prefix(2)) { profile in
-                                VStack {
-                                    AsyncImage(url: URL(string: profile.avatar)) { image in
-                                        image
-                                            .resizable()
-                                            .scaledToFill()
-                                    } placeholder: {
-                                        Color.gray
-                                    }
-                                    .frame(width: 100, height: 140)
-                                    .clipped()
-                                    .cornerRadius(12)
-
-                                    Text(profile.name)
-                                        .font(.inter(size: 14, weight: .bold))
-                                }
-                                .opacity(0.8)
-                            }
+                                .blur(radius: 3)
+                                .frame(
+                                    width: (UIScreen.main.bounds.width - 48) / 2,
+                                    height: 180
+                                )
+                                .clipped()
+                                .cornerRadius(16)
                         }
                     }
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 20)
                 }
             }
-            .padding()
-        }
-        .onAppear {
-            viewModel.fetchNotes()
+
+            // MARK: - Bottom Tab Bar
+            Divider()
+            HStack {
+                TabItem(title: "Discover", systemIcon: "magnifyingglass")
+                TabItem(title: "Notes", systemIcon: "envelope.fill", badgeCount: 9, selected: true)
+                TabItem(title: "Matches", systemIcon: "heart.fill", badgeCount: 50)
+                TabItem(title: "Profile", systemIcon: "person.fill")
+            }
+            .padding(.top, 10)
+            .padding(.bottom, 30)
+            .background(Color.white)
         }
     }
 }

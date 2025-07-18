@@ -26,6 +26,7 @@
 		70ABF6172E2A133A00C34148 /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF6162E2A133A00C34148 /* NotesView.swift */; };
 		70ABF6192E2A146400C34148 /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF6182E2A146400C34148 /* NotesViewModel.swift */; };
 		70ABF61B2E2A14DD00C34148 /* NotesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF61A2E2A14DD00C34148 /* NotesResponse.swift */; };
+		70ABF61E2E2A26CC00C34148 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF61D2E2A26CC00C34148 /* TabItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		70ABF6162E2A133A00C34148 /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
 		70ABF6182E2A146400C34148 /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
 		70ABF61A2E2A14DD00C34148 /* NotesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesResponse.swift; sourceTree = "<group>"; };
+		70ABF61D2E2A26CC00C34148 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +209,7 @@
 				70ABF60A2E2A016200C34148 /* PhoneNumberView.swift */,
 				70ABF6122E2A0F8000C34148 /* OTPView.swift */,
 				70ABF6162E2A133A00C34148 /* NotesView.swift */,
+				70ABF61C2E2A26B200C34148 /* Components */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -235,6 +238,14 @@
 				70ABF6112E2A078600C34148 /* Inter-Regular.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		70ABF61C2E2A26B200C34148 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				70ABF61D2E2A26CC00C34148 /* TabItem.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,6 +386,7 @@
 				70ABF6072E2A007200C34148 /* Font.swift in Sources */,
 				701AE27F2E2961F80065ABB6 /* ContentView.swift in Sources */,
 				70ABF6152E2A10F000C34148 /* OTPViewModel.swift in Sources */,
+				70ABF61E2E2A26CC00C34148 /* TabItem.swift in Sources */,
 				701AE2A92E29633E0065ABB6 /* AuthResponse.swift in Sources */,
 				701AE27D2E2961F80065ABB6 /* AisleAssignmentsApp.swift in Sources */,
 				70ABF6132E2A0F8000C34148 /* OTPView.swift in Sources */,
