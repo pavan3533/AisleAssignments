@@ -33,44 +33,26 @@ struct OTPView: View {
                     .font(.inter(size: 30, weight: .bold))
                     .foregroundColor(.black)
 
-                HStack {
-                    TextField("1234", text: $viewModel.otpCode)
-                        .keyboardType(.numberPad)
-                        .font(.inter(size: 16, weight: .medium))
-                        .multilineTextAlignment(.center)
-                        .padding(.horizontal, 24)
-                        .padding(.vertical, 10)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 8)
-                                .stroke(Color.black, lineWidth: 1)
-                        )
-                        .frame(width: 80)
-                }
+                RoundedTextField(
+                    placeholder: "1234",
+                    text: $viewModel.otpCode,
+                    keyboardType: .numberPad,
+                    alignment: .center,
+                    width: 80
+                )
+
 
                 if let error = viewModel.errorMessage {
-                    Text(error)
-                        .foregroundColor(.red)
-                        .font(.inter(size: 14))
+                    ErrorTextView(error: error)
                 }
 
                 HStack(spacing: 12) {
-                    if viewModel.isLoading {
-                        ProgressView()
-                            .progressViewStyle(CircularProgressViewStyle(tint: .black))
-                            .frame(width: 100, height: 34)
-                    } else {
-                        Button(action: {
-                            viewModel.verifyOTP()
-                        }) {
-                            Text("Continue")
-                                .font(.inter(size: 14, weight: .bold))
-                                .foregroundColor(.black)
-                                .frame(width: 100, height: 34)
-                                .background(Color.yellowPrimary)
-                                .cornerRadius(20)
-                        }
-                    }
-
+                    PrimaryButton(
+                        title: "Continue",
+                        action: { viewModel.verifyOTP() },
+                        isLoading: viewModel.isLoading
+                    )
+                    
                     Text(String(format: "00:%02d", viewModel.secondsRemaining))
                         .font(.inter(size: 14, weight: .bold))
                         .foregroundColor(.black)

@@ -34,6 +34,9 @@
 		70ABF62E2E2A6A7700C34148 /* NotesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF62D2E2A6A7700C34148 /* NotesService.swift */; };
 		70ABF6332E2A6D8B00C34148 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF6322E2A6D8B00C34148 /* TabBarView.swift */; };
 		70ABF6352E2A88E500C34148 /* OTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF6342E2A88E500C34148 /* OTPService.swift */; };
+		70ABF6442E2AAA2F00C34148 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF6432E2AAA2F00C34148 /* PrimaryButton.swift */; };
+		70ABF6462E2AAB2900C34148 /* ErrorTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF6452E2AAB2900C34148 /* ErrorTextView.swift */; };
+		70ABF6482E2AABA100C34148 /* RoundedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF6472E2AABA100C34148 /* RoundedTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,9 @@
 		70ABF62D2E2A6A7700C34148 /* NotesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesService.swift; sourceTree = "<group>"; };
 		70ABF6322E2A6D8B00C34148 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		70ABF6342E2A88E500C34148 /* OTPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPService.swift; sourceTree = "<group>"; };
+		70ABF6432E2AAA2F00C34148 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		70ABF6452E2AAB2900C34148 /* ErrorTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTextView.swift; sourceTree = "<group>"; };
+		70ABF6472E2AABA100C34148 /* RoundedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,10 +143,10 @@
 			children = (
 				701AE2A62E2962AC0065ABB6 /* Models */,
 				701AE2AA2E2963A50065ABB6 /* Network */,
-				70ABF6092E2A013700C34148 /* Views */,
 				70ABF60C2E2A017100C34148 /* ViewModels */,
-				701AE27C2E2961F80065ABB6 /* AisleAssignmentsApp.swift */,
+				70ABF6092E2A013700C34148 /* Views */,
 				701AE27E2E2961F80065ABB6 /* ContentView.swift */,
+				701AE27C2E2961F80065ABB6 /* AisleAssignmentsApp.swift */,
 				701AE2802E2961F90065ABB6 /* Assets.xcassets */,
 				70ABF60F2E2A03CC00C34148 /* Resource */,
 				70ABF6012E29FFFE00C34148 /* Utilities */,
@@ -223,8 +229,8 @@
 		70ABF6092E2A013700C34148 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				70ABF60A2E2A016200C34148 /* PhoneNumberView.swift */,
-				70ABF6122E2A0F8000C34148 /* OTPView.swift */,
+				70ABF6372E2A95FC00C34148 /* PhoneNumber */,
+				70ABF6362E2A916700C34148 /* OTP */,
 				70ABF61F2E2A636300C34148 /* Notes */,
 				70ABF62F2E2A6C8300C34148 /* Shared */,
 			);
@@ -287,6 +293,9 @@
 		70ABF62F2E2A6C8300C34148 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				70ABF6472E2AABA100C34148 /* RoundedTextView.swift */,
+				70ABF6432E2AAA2F00C34148 /* PrimaryButton.swift */,
+				70ABF6452E2AAB2900C34148 /* ErrorTextView.swift */,
 				70ABF6312E2A6CAF00C34148 /* Tab Bar */,
 			);
 			path = Shared;
@@ -299,6 +308,22 @@
 				70ABF6322E2A6D8B00C34148 /* TabBarView.swift */,
 			);
 			path = "Tab Bar";
+			sourceTree = "<group>";
+		};
+		70ABF6362E2A916700C34148 /* OTP */ = {
+			isa = PBXGroup;
+			children = (
+				70ABF6122E2A0F8000C34148 /* OTPView.swift */,
+			);
+			path = OTP;
+			sourceTree = "<group>";
+		};
+		70ABF6372E2A95FC00C34148 /* PhoneNumber */ = {
+			isa = PBXGroup;
+			children = (
+				70ABF60A2E2A016200C34148 /* PhoneNumberView.swift */,
+			);
+			path = PhoneNumber;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,6 +464,7 @@
 				70ABF6192E2A146400C34148 /* NotesViewModel.swift in Sources */,
 				70ABF6072E2A007200C34148 /* Font.swift in Sources */,
 				701AE27F2E2961F80065ABB6 /* ContentView.swift in Sources */,
+				70ABF6462E2AAB2900C34148 /* ErrorTextView.swift in Sources */,
 				70ABF6152E2A10F000C34148 /* OTPViewModel.swift in Sources */,
 				70ABF61E2E2A26CC00C34148 /* TabItem.swift in Sources */,
 				701AE2A92E29633E0065ABB6 /* AuthResponse.swift in Sources */,
@@ -449,8 +475,10 @@
 				70ABF6242E2A645900C34148 /* NotesProfileView.swift in Sources */,
 				70ABF6332E2A6D8B00C34148 /* TabBarView.swift in Sources */,
 				70ABF62A2E2A66A300C34148 /* View.swift in Sources */,
+				70ABF6482E2AABA100C34148 /* RoundedTextView.swift in Sources */,
 				70ABF6222E2A639800C34148 /* NotesHeaderView.swift in Sources */,
 				70ABF6352E2A88E500C34148 /* OTPService.swift in Sources */,
+				70ABF6442E2AAA2F00C34148 /* PrimaryButton.swift in Sources */,
 				70ABF6042E2A003800C34148 /* Color.swift in Sources */,
 				70ABF60E2E2A019600C34148 /* AuthViewModel.swift in Sources */,
 			);
