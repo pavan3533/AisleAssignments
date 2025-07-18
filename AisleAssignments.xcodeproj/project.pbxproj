@@ -32,6 +32,7 @@
 		70ABF62A2E2A66A300C34148 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF6292E2A66A300C34148 /* View.swift */; };
 		70ABF62C2E2A671200C34148 /* InfoSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF62B2E2A671200C34148 /* InfoSectionView.swift */; };
 		70ABF62E2E2A6A7700C34148 /* NotesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF62D2E2A6A7700C34148 /* NotesService.swift */; };
+		70ABF6332E2A6D8B00C34148 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF6322E2A6D8B00C34148 /* TabBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		70ABF6292E2A66A300C34148 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		70ABF62B2E2A671200C34148 /* InfoSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSectionView.swift; sourceTree = "<group>"; };
 		70ABF62D2E2A6A7700C34148 /* NotesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesService.swift; sourceTree = "<group>"; };
+		70ABF6322E2A6D8B00C34148 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +223,7 @@
 				70ABF60A2E2A016200C34148 /* PhoneNumberView.swift */,
 				70ABF6122E2A0F8000C34148 /* OTPView.swift */,
 				70ABF61F2E2A636300C34148 /* Notes */,
+				70ABF62F2E2A6C8300C34148 /* Shared */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -266,7 +269,6 @@
 				70ABF6212E2A639800C34148 /* NotesHeaderView.swift */,
 				70ABF6232E2A645900C34148 /* NotesProfileView.swift */,
 				70ABF62B2E2A671200C34148 /* InfoSectionView.swift */,
-				70ABF61D2E2A26CC00C34148 /* TabItem.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -277,6 +279,23 @@
 				70ABF6292E2A66A300C34148 /* View.swift */,
 			);
 			path = "View+Extension";
+			sourceTree = "<group>";
+		};
+		70ABF62F2E2A6C8300C34148 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				70ABF6312E2A6CAF00C34148 /* Tab Bar */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		70ABF6312E2A6CAF00C34148 /* Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				70ABF61D2E2A26CC00C34148 /* TabItem.swift */,
+				70ABF6322E2A6D8B00C34148 /* TabBarView.swift */,
+			);
+			path = "Tab Bar";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -425,6 +444,7 @@
 				70ABF62E2E2A6A7700C34148 /* NotesService.swift in Sources */,
 				70ABF60B2E2A016200C34148 /* PhoneNumberView.swift in Sources */,
 				70ABF6242E2A645900C34148 /* NotesProfileView.swift in Sources */,
+				70ABF6332E2A6D8B00C34148 /* TabBarView.swift in Sources */,
 				70ABF62A2E2A66A300C34148 /* View.swift in Sources */,
 				70ABF6222E2A639800C34148 /* NotesHeaderView.swift in Sources */,
 				70ABF6042E2A003800C34148 /* Color.swift in Sources */,

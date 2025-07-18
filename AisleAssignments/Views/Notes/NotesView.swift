@@ -14,8 +14,11 @@ struct NotesView: View {
         VStack(spacing: 0) {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .center, spacing: 10) {
+                    
+                    // MARK: - Notes Header
                     NotesHeaderView()
 
+                    // MARK: - Meena Featured Card
                     if let meena = viewModel.profiles.first {
                         NotesProfileView(
                             profile: meena,
@@ -27,8 +30,10 @@ struct NotesView: View {
                         )
                     }
 
+                    // MARK: - Info Section
                     InfoSectionView()
 
+                    // MARK: - Teena & Beena Cards
                     HStack(spacing: 8) {
                         ForEach(viewModel.profiles.dropFirst()) { profile in
                             NotesProfileView(
@@ -46,16 +51,9 @@ struct NotesView: View {
                 }
             }
 
+            // MARK: - Bottom Tab Bar 
             Divider()
-            HStack {
-                TabItem(title: "Discover", systemIcon: "magnifyingglass")
-                TabItem(title: "Notes", systemIcon: "envelope.fill", badgeCount: 9, selected: true)
-                TabItem(title: "Matches", systemIcon: "heart.fill", badgeCount: 50)
-                TabItem(title: "Profile", systemIcon: "person.fill")
-            }
-            .padding(.top, 10)
-            .padding(.bottom, 30)
-            .background(Color.white)
+            TabBarView(selectedTab: "Notes")
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
@@ -63,4 +61,8 @@ struct NotesView: View {
             viewModel.fetchNotes()
         }
     }
+}
+
+#Preview {
+    NotesView()
 }
