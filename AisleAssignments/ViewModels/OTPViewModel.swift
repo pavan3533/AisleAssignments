@@ -18,51 +18,53 @@ final class OTPViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var errorMessage: String?
     @Published var showNotesView = false
+    @Published var secondsRemaining = 59
 
     private var cancellables = Set<AnyCancellable>()
+    private var timer: Timer?
+    private let service: OTPService
 
-    init(phoneNumber: String) {
+    init(phoneNumber: String, service: OTPService = OTPService()) {
         self.phoneNumber = phoneNumber
+        self.service = service
+        startTimer()
     }
 
     func verifyOTP() {
         isLoading = true
-        let params = ["number": phoneNumber, "otp": otpCode]
+        errorMessage = nil
 
-        guard let url = URL(string: "https://app.aisle.co/V1/users/verify_otp") else {
-            self.errorMessage = "Invalid URL"
+        service.verifyOTP(phone: phoneNumber, code: otpCode) { [weak self] result in
+            guard let self = self else { return }
             self.isLoading = false
-            return
-        }
 
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = try? JSONSerialization.data(withJSONObject: params)
+            switch result {
+            case .success(let token):
+                self.authToken = token
+                UserDefaults.standard.set(token, forKey: "authToken")
+                self.showNotesView = true
 
-        URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
-            DispatchQueue.main.async {
-                self?.isLoading = false
-
-                if let error = error {
-                    self?.errorMessage = error.localizedDescription
-                    return
-                }
-
-                guard let data = data else {
-                    self?.errorMessage = "No response data"
-                    return
-                }
-
-                if let result = try? JSONDecoder().decode([String: String].self, from: data),
-                   let token = result["token"] {
-                    self?.authToken = token
-                    UserDefaults.standard.set(token, forKey: "authToken")
-                    self?.showNotesView = true
-                } else {
-                    self?.errorMessage = "Invalid OTP or response"
-                }
+            case .failure(let error):
+                self.errorMessage = error.localizedDescription
             }
-        }.resume()
+        }
+    }
+
+    private func startTimer() {
+        secondsRemaining = 59
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
+            guard let self = self else { return }
+
+            if self.secondsRemaining > 0 {
+                self.secondsRemaining -= 1
+            } else {
+                self.timer?.invalidate()
+            }
+        }
+    }
+
+    deinit {
+        timer?.invalidate()
     }
 }

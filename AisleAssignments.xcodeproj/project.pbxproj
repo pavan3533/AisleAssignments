@@ -33,6 +33,7 @@
 		70ABF62C2E2A671200C34148 /* InfoSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF62B2E2A671200C34148 /* InfoSectionView.swift */; };
 		70ABF62E2E2A6A7700C34148 /* NotesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF62D2E2A6A7700C34148 /* NotesService.swift */; };
 		70ABF6332E2A6D8B00C34148 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF6322E2A6D8B00C34148 /* TabBarView.swift */; };
+		70ABF6352E2A88E500C34148 /* OTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF6342E2A88E500C34148 /* OTPService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		70ABF62B2E2A671200C34148 /* InfoSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSectionView.swift; sourceTree = "<group>"; };
 		70ABF62D2E2A6A7700C34148 /* NotesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesService.swift; sourceTree = "<group>"; };
 		70ABF6322E2A6D8B00C34148 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		70ABF6342E2A88E500C34148 /* OTPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 				701AE2AB2E2963E40065ABB6 /* NetworkManager.swift */,
 				701AE2AD2E2964000065ABB6 /* APIService.swift */,
 				70ABF62D2E2A6A7700C34148 /* NotesService.swift */,
+				70ABF6342E2A88E500C34148 /* OTPService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				70ABF6332E2A6D8B00C34148 /* TabBarView.swift in Sources */,
 				70ABF62A2E2A66A300C34148 /* View.swift in Sources */,
 				70ABF6222E2A639800C34148 /* NotesHeaderView.swift in Sources */,
+				70ABF6352E2A88E500C34148 /* OTPService.swift in Sources */,
 				70ABF6042E2A003800C34148 /* Color.swift in Sources */,
 				70ABF60E2E2A019600C34148 /* AuthViewModel.swift in Sources */,
 			);
