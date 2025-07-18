@@ -47,10 +47,10 @@ struct PhoneNumberView: View {
                 }
                 .padding(.top, 8)
 
-//                NavigationLink(destination: OTPView(phoneNumber: "+91\(viewModel.phoneNumber)"),
-//                               isActive: $viewModel.showOTPView) {
-//                    EmptyView()
-//                }
+                NavigationLink(destination: OTPView(phoneNumber: "+91\(viewModel.phoneNumber)"),
+                               isActive: $viewModel.showOTPView) {
+                    EmptyView()
+                }
             }
             .padding()
         }
