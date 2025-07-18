@@ -23,6 +23,9 @@
 		70ABF60E2E2A019600C34148 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF60D2E2A019600C34148 /* AuthViewModel.swift */; };
 		70ABF6132E2A0F8000C34148 /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF6122E2A0F8000C34148 /* OTPView.swift */; };
 		70ABF6152E2A10F000C34148 /* OTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF6142E2A10F000C34148 /* OTPViewModel.swift */; };
+		70ABF6172E2A133A00C34148 /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF6162E2A133A00C34148 /* NotesView.swift */; };
+		70ABF6192E2A146400C34148 /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF6182E2A146400C34148 /* NotesViewModel.swift */; };
+		70ABF61B2E2A14DD00C34148 /* NotesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF61A2E2A14DD00C34148 /* NotesResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,9 @@
 		70ABF6112E2A078600C34148 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 		70ABF6122E2A0F8000C34148 /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
 		70ABF6142E2A10F000C34148 /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
+		70ABF6162E2A133A00C34148 /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
+		70ABF6182E2A146400C34148 /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
+		70ABF61A2E2A14DD00C34148 /* NotesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				701AE2A82E29633E0065ABB6 /* AuthResponse.swift */,
+				70ABF61A2E2A14DD00C34148 /* NotesResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -199,6 +206,7 @@
 			children = (
 				70ABF60A2E2A016200C34148 /* PhoneNumberView.swift */,
 				70ABF6122E2A0F8000C34148 /* OTPView.swift */,
+				70ABF6162E2A133A00C34148 /* NotesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -208,6 +216,7 @@
 			children = (
 				70ABF60D2E2A019600C34148 /* AuthViewModel.swift */,
 				70ABF6142E2A10F000C34148 /* OTPViewModel.swift */,
+				70ABF6182E2A146400C34148 /* NotesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -358,8 +367,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70ABF61B2E2A14DD00C34148 /* NotesResponse.swift in Sources */,
 				701AE2AC2E2963E40065ABB6 /* NetworkManager.swift in Sources */,
 				701AE2AE2E2964000065ABB6 /* APIService.swift in Sources */,
+				70ABF6172E2A133A00C34148 /* NotesView.swift in Sources */,
+				70ABF6192E2A146400C34148 /* NotesViewModel.swift in Sources */,
 				70ABF6072E2A007200C34148 /* Font.swift in Sources */,
 				701AE27F2E2961F80065ABB6 /* ContentView.swift in Sources */,
 				70ABF6152E2A10F000C34148 /* OTPViewModel.swift in Sources */,
