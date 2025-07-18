@@ -17,6 +17,10 @@
 		701AE2A92E29633E0065ABB6 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701AE2A82E29633E0065ABB6 /* AuthResponse.swift */; };
 		701AE2AC2E2963E40065ABB6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701AE2AB2E2963E40065ABB6 /* NetworkManager.swift */; };
 		701AE2AE2E2964000065ABB6 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701AE2AD2E2964000065ABB6 /* APIService.swift */; };
+		70ABF6042E2A003800C34148 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF6032E2A003800C34148 /* Color.swift */; };
+		70ABF6072E2A007200C34148 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF6062E2A007200C34148 /* Font.swift */; };
+		70ABF60B2E2A016200C34148 /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF60A2E2A016200C34148 /* PhoneNumberView.swift */; };
+		70ABF60E2E2A019600C34148 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF60D2E2A019600C34148 /* AuthViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +54,11 @@
 		701AE2A82E29633E0065ABB6 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		701AE2AB2E2963E40065ABB6 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		701AE2AD2E2964000065ABB6 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		70ABF6032E2A003800C34148 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		70ABF6062E2A007200C34148 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		70ABF60A2E2A016200C34148 /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
+		70ABF60D2E2A019600C34148 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		70ABF6112E2A078600C34148 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,9 +111,13 @@
 			children = (
 				701AE2A62E2962AC0065ABB6 /* Models */,
 				701AE2AA2E2963A50065ABB6 /* Network */,
+				70ABF6092E2A013700C34148 /* Views */,
+				70ABF60C2E2A017100C34148 /* ViewModels */,
 				701AE27C2E2961F80065ABB6 /* AisleAssignmentsApp.swift */,
 				701AE27E2E2961F80065ABB6 /* ContentView.swift */,
 				701AE2802E2961F90065ABB6 /* Assets.xcassets */,
+				70ABF60F2E2A03CC00C34148 /* Resource */,
+				70ABF6012E29FFFE00C34148 /* Utilities */,
 				701AE2822E2961F90065ABB6 /* Preview Content */,
 			);
 			path = AisleAssignments;
@@ -150,6 +163,63 @@
 				701AE2AD2E2964000065ABB6 /* APIService.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		70ABF6012E29FFFE00C34148 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				70ABF6022E2A001200C34148 /* Color+Extension */,
+				70ABF6052E2A004D00C34148 /* Font+Extension */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		70ABF6022E2A001200C34148 /* Color+Extension */ = {
+			isa = PBXGroup;
+			children = (
+				70ABF6032E2A003800C34148 /* Color.swift */,
+			);
+			path = "Color+Extension";
+			sourceTree = "<group>";
+		};
+		70ABF6052E2A004D00C34148 /* Font+Extension */ = {
+			isa = PBXGroup;
+			children = (
+				70ABF6062E2A007200C34148 /* Font.swift */,
+			);
+			path = "Font+Extension";
+			sourceTree = "<group>";
+		};
+		70ABF6092E2A013700C34148 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				70ABF60A2E2A016200C34148 /* PhoneNumberView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		70ABF60C2E2A017100C34148 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				70ABF60D2E2A019600C34148 /* AuthViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		70ABF60F2E2A03CC00C34148 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				70ABF6102E2A03E100C34148 /* Font */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		70ABF6102E2A03E100C34148 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				70ABF6112E2A078600C34148 /* Inter-Regular.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,9 +354,13 @@
 			files = (
 				701AE2AC2E2963E40065ABB6 /* NetworkManager.swift in Sources */,
 				701AE2AE2E2964000065ABB6 /* APIService.swift in Sources */,
+				70ABF6072E2A007200C34148 /* Font.swift in Sources */,
 				701AE27F2E2961F80065ABB6 /* ContentView.swift in Sources */,
 				701AE2A92E29633E0065ABB6 /* AuthResponse.swift in Sources */,
 				701AE27D2E2961F80065ABB6 /* AisleAssignmentsApp.swift in Sources */,
+				70ABF60B2E2A016200C34148 /* PhoneNumberView.swift in Sources */,
+				70ABF6042E2A003800C34148 /* Color.swift in Sources */,
+				70ABF60E2E2A019600C34148 /* AuthViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
