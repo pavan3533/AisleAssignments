@@ -10,16 +10,19 @@ import Foundation
 import SwiftUI
 
 struct OTPView: View {
-    let phoneNumber: String
-    @StateObject private var viewModel = AuthViewModel()
+    @StateObject private var viewModel: OTPViewModel
     @State private var secondsRemaining = 59
     @State private var timer: Timer?
+
+    init(phoneNumber: String) {
+        _viewModel = StateObject(wrappedValue: OTPViewModel(phoneNumber: phoneNumber))
+    }
 
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading, spacing: 16) {
                 HStack {
-                    Text(phoneNumber)
+                    Text(viewModel.phoneNumber)
                         .font(.inter(size: 16))
                     Image(systemName: "pencil")
                 }
@@ -54,17 +57,13 @@ struct OTPView: View {
                         .padding(.leading)
                 }
 
-//                NavigationLink(destination: NotesView(), isActive: $viewModel.showNotesView) {
-//                    EmptyView()
-//                }
+                NavigationLink(destination: NotesView(), isActive: $viewModel.showNotesView) {
+                    EmptyView()
+                }
             }
             .padding()
-            .onAppear {
-                startTimer()
-            }
-            .onDisappear {
-                timer?.invalidate()
-            }
+            .onAppear { startTimer() }
+            .onDisappear { timer?.invalidate() }
         }
     }
 
