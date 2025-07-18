@@ -22,7 +22,6 @@ struct NotesView: View {
                     if let meena = viewModel.profiles.first {
                         NotesProfileView(
                             profile: meena,
-                            isBlurred: false,
                             width: 344,
                             height: 344,
                             cornerRadius: 20,
@@ -38,7 +37,6 @@ struct NotesView: View {
                         ForEach(viewModel.profiles.dropFirst()) { profile in
                             NotesProfileView(
                                 profile: profile,
-                                isBlurred: true,
                                 width: 168,
                                 height: 255,
                                 cornerRadius: 16,

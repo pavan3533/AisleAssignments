@@ -11,7 +11,6 @@ import SwiftUI
 
 struct NotesProfileView: View {
     let profile: Profile
-    let isBlurred: Bool
     let width: CGFloat
     let height: CGFloat
     let cornerRadius: CGFloat
@@ -21,7 +20,6 @@ struct NotesProfileView: View {
         Image(profile.avatar)
             .resizable()
             .scaledToFill()
-            .if(isBlurred) { $0.blur(radius: 3) }
             .frame(width: width, height: height)
             .clipped()
             .cornerRadius(cornerRadius)
