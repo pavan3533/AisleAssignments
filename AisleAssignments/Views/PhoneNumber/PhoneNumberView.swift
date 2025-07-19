@@ -20,11 +20,11 @@ struct PhoneNumberView: View {
 
                 // Title and subtitle
                 Text("Get OTP")
-                    .font(.inter(size: 16, weight: .medium))
+                    .font(.custom("Inter_28pt-Regular", size: 16))
                     .foregroundColor(.black)
 
                 Text("Enter Your\nPhone Number")
-                    .font(.inter(size: 30, weight: .bold))
+                    .font(.custom("Inter28pt-Black", size: 30))
                     .foregroundColor(.black)
 
                 // Phone number input with country code

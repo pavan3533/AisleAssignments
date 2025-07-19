@@ -21,7 +21,7 @@ struct RoundedTextField: View {
     var body: some View {
         TextField(placeholder, text: $text)
             .keyboardType(keyboardType)
-            .font(.inter(size: 16, weight: .medium))
+            .font(.custom("Inter28pt-Black", size: 16))
             .multilineTextAlignment(alignment)
             .padding(.horizontal, 12)
             .padding(.vertical, 10)

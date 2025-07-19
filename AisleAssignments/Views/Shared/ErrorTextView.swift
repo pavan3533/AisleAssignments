@@ -14,6 +14,6 @@ struct ErrorTextView: View {
     var body: some View {
         Text(error)
             .foregroundColor(.red)
-            .font(.inter(size: 14))
+            .font(.custom("Inter28pt-Regular", size: 14))
     }
 }

@@ -19,7 +19,7 @@ struct OTPView: View {
             VStack(alignment: .leading, spacing: 16) {
                 HStack(spacing: 6) {
                     Text(viewModel.phoneNumber)
-                        .font(.inter(size: 18, weight: .medium))
+                        .font(.custom("Inter28pt-Regular", size: 18))
                         .foregroundColor(.black)
 
                     Image("pencil")
@@ -30,7 +30,7 @@ struct OTPView: View {
                 .padding(.top, 80)
 
                 Text("Enter The\nOTP")
-                    .font(.inter(size: 30, weight: .bold))
+                    .font(.custom("Inter28pt-Black", size: 30))
                     .foregroundColor(.black)
 
                 RoundedTextField(
@@ -54,7 +54,7 @@ struct OTPView: View {
                     )
                     
                     Text(String(format: "00:%02d", viewModel.secondsRemaining))
-                        .font(.inter(size: 14, weight: .bold))
+                        .font(.custom("Inter28pt-Black", size: 14))
                         .foregroundColor(.black)
                 }
 

@@ -14,12 +14,12 @@ struct InfoSectionView: View {
         HStack(alignment: .bottom) {
             VStack(alignment: .leading, spacing: 6) {
                 Text("Interested In You")
-                    .font(.gilroy(size: 22, weight: .black))
+                    .font(.gilroy(size: 22, weight: .bold))
                     .foregroundColor(.black)
                     .padding(.leading, 40)
 
                 Text("Premium members can\nview all their likes at once")
-                    .font(.gilroy(size: 15))
+                    .font(.gilroy(size: 15, weight: .light))
                     .foregroundColor(.graySubtle)
                     .padding(.leading, 40)
             }
@@ -32,7 +32,7 @@ struct InfoSectionView: View {
                     .foregroundColor(.black)
                     .padding(.horizontal, 24)
                     .padding(.vertical, 16)
-                    .background(Color.yellowPrimaryLook)
+                    .background(Color.yellowSecondaryLook)
                     .clipShape(Capsule())
             }
             .padding(.trailing, 24)

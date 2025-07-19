@@ -23,7 +23,7 @@ struct PrimaryButton: View {
         } else {
             Button(action: action) {
                 Text(title)
-                    .font(.inter(size: 14, weight: .bold))
+                    .font(.custom("Inter28pt-Black", size: 14))
                     .foregroundColor(.black)
                     .frame(width: width, height: height)
                     .background(Color.yellowPrimary)

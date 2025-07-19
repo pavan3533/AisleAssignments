@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70064B1E2E2B591D00577CF6 /* Inter_28pt-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70064B1D2E2B591D00577CF6 /* Inter_28pt-Regular.ttf */; };
+		70064B202E2B592600577CF6 /* Inter_28pt-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70064B1F2E2B592600577CF6 /* Inter_28pt-Black.ttf */; };
+		70064B222E2B592E00577CF6 /* Inter_28pt-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 70064B212E2B592E00577CF6 /* Inter_28pt-ExtraBold.ttf */; };
+		70064B242E2B6B4300577CF6 /* Gilroy-ExtraBold 800.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70064B232E2B6B4300577CF6 /* Gilroy-ExtraBold 800.otf */; };
+		70064B262E2B6B5400577CF6 /* Gilroy-Light 300.otf in Resources */ = {isa = PBXBuildFile; fileRef = 70064B252E2B6B5400577CF6 /* Gilroy-Light 300.otf */; };
 		701AE27D2E2961F80065ABB6 /* AisleAssignmentsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701AE27C2E2961F80065ABB6 /* AisleAssignmentsApp.swift */; };
 		701AE27F2E2961F80065ABB6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701AE27E2E2961F80065ABB6 /* ContentView.swift */; };
 		701AE2812E2961F90065ABB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 701AE2802E2961F90065ABB6 /* Assets.xcassets */; };
@@ -15,7 +20,7 @@
 		701AE2982E2961F90065ABB6 /* AisleAssignmentsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701AE2972E2961F90065ABB6 /* AisleAssignmentsUITests.swift */; };
 		701AE29A2E2961F90065ABB6 /* AisleAssignmentsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701AE2992E2961F90065ABB6 /* AisleAssignmentsUITestsLaunchTests.swift */; };
 		701AE2A92E29633E0065ABB6 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701AE2A82E29633E0065ABB6 /* AuthResponse.swift */; };
-		701AE2AC2E2963E40065ABB6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701AE2AB2E2963E40065ABB6 /* NetworkManager.swift */; };
+		701AE2AC2E2963E40065ABB6 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701AE2AB2E2963E40065ABB6 /* NetworkError.swift */; };
 		701AE2AE2E2964000065ABB6 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701AE2AD2E2964000065ABB6 /* APIService.swift */; };
 		70ABF6042E2A003800C34148 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF6032E2A003800C34148 /* Color.swift */; };
 		70ABF6072E2A007200C34148 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70ABF6062E2A007200C34148 /* Font.swift */; };
@@ -63,6 +68,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		70064B1D2E2B591D00577CF6 /* Inter_28pt-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter_28pt-Regular.ttf"; sourceTree = "<group>"; };
+		70064B1F2E2B592600577CF6 /* Inter_28pt-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter_28pt-Black.ttf"; sourceTree = "<group>"; };
+		70064B212E2B592E00577CF6 /* Inter_28pt-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter_28pt-ExtraBold.ttf"; sourceTree = "<group>"; };
+		70064B232E2B6B4300577CF6 /* Gilroy-ExtraBold 800.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-ExtraBold 800.otf"; sourceTree = "<group>"; };
+		70064B252E2B6B5400577CF6 /* Gilroy-Light 300.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Light 300.otf"; sourceTree = "<group>"; };
 		701AE2792E2961F80065ABB6 /* AisleAssignments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AisleAssignments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		701AE27C2E2961F80065ABB6 /* AisleAssignmentsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AisleAssignmentsApp.swift; sourceTree = "<group>"; };
 		701AE27E2E2961F80065ABB6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,13 +84,12 @@
 		701AE2972E2961F90065ABB6 /* AisleAssignmentsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AisleAssignmentsUITests.swift; sourceTree = "<group>"; };
 		701AE2992E2961F90065ABB6 /* AisleAssignmentsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AisleAssignmentsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		701AE2A82E29633E0065ABB6 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
-		701AE2AB2E2963E40065ABB6 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		701AE2AB2E2963E40065ABB6 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		701AE2AD2E2964000065ABB6 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		70ABF6032E2A003800C34148 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		70ABF6062E2A007200C34148 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		70ABF60A2E2A016200C34148 /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
 		70ABF60D2E2A019600C34148 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
-		70ABF6112E2A078600C34148 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 		70ABF6122E2A0F8000C34148 /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
 		70ABF6142E2A10F000C34148 /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
 		70ABF6162E2A133A00C34148 /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
@@ -103,6 +112,7 @@
 		70ABF6512E2ABD4000C34148 /* AuthViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModelTests.swift; sourceTree = "<group>"; };
 		70ABF6532E2ABE1700C34148 /* MockNotesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNotesService.swift; sourceTree = "<group>"; };
 		70ABF6552E2ABE4900C34148 /* NotesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModelTests.swift; sourceTree = "<group>"; };
+		70ABF6572E2AC52C00C34148 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +163,7 @@
 		701AE27B2E2961F80065ABB6 /* AisleAssignments */ = {
 			isa = PBXGroup;
 			children = (
+				70ABF6572E2AC52C00C34148 /* Info.plist */,
 				701AE2A62E2962AC0065ABB6 /* Models */,
 				701AE2AA2E2963A50065ABB6 /* Network */,
 				70ABF60C2E2A017100C34148 /* ViewModels */,
@@ -206,7 +217,7 @@
 		701AE2AA2E2963A50065ABB6 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				701AE2AB2E2963E40065ABB6 /* NetworkManager.swift */,
+				701AE2AB2E2963E40065ABB6 /* NetworkError.swift */,
 				701AE2AD2E2964000065ABB6 /* APIService.swift */,
 				70ABF62D2E2A6A7700C34148 /* NotesService.swift */,
 				70ABF6342E2A88E500C34148 /* OTPService.swift */,
@@ -272,7 +283,11 @@
 		70ABF6102E2A03E100C34148 /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				70ABF6112E2A078600C34148 /* Inter-Regular.ttf */,
+				70064B252E2B6B5400577CF6 /* Gilroy-Light 300.otf */,
+				70064B232E2B6B4300577CF6 /* Gilroy-ExtraBold 800.otf */,
+				70064B212E2B592E00577CF6 /* Inter_28pt-ExtraBold.ttf */,
+				70064B1F2E2B592600577CF6 /* Inter_28pt-Black.ttf */,
+				70064B1D2E2B591D00577CF6 /* Inter_28pt-Regular.ttf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -464,7 +479,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70064B222E2B592E00577CF6 /* Inter_28pt-ExtraBold.ttf in Resources */,
+				70064B242E2B6B4300577CF6 /* Gilroy-ExtraBold 800.otf in Resources */,
+				70064B262E2B6B5400577CF6 /* Gilroy-Light 300.otf in Resources */,
 				701AE2842E2961F90065ABB6 /* Preview Assets.xcassets in Resources */,
+				70064B202E2B592600577CF6 /* Inter_28pt-Black.ttf in Resources */,
+				70064B1E2E2B591D00577CF6 /* Inter_28pt-Regular.ttf in Resources */,
 				701AE2812E2961F90065ABB6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,7 +511,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70ABF61B2E2A14DD00C34148 /* NotesResponse.swift in Sources */,
-				701AE2AC2E2963E40065ABB6 /* NetworkManager.swift in Sources */,
+				701AE2AC2E2963E40065ABB6 /* NetworkError.swift in Sources */,
 				701AE2AE2E2964000065ABB6 /* APIService.swift in Sources */,
 				70ABF6172E2A133A00C34148 /* NotesView.swift in Sources */,
 				70ABF62C2E2A671200C34148 /* InfoSectionView.swift in Sources */,
@@ -687,6 +707,7 @@
 				DEVELOPMENT_TEAM = H7R28ZNW4Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AisleAssignments/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -716,6 +737,7 @@
 				DEVELOPMENT_TEAM = H7R28ZNW4Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AisleAssignments/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -10,10 +10,27 @@ import SwiftUI
 
 extension Font {
     static func inter(size: CGFloat, weight: Font.Weight = .regular) -> Font {
-        return .custom("Inter", size: size) 
-    }
-    
+           switch weight {
+           case .regular:
+               return .custom("Inter_28pt-Regular", size: size)
+           case .bold:
+               return .custom("Inter_28pt-Black", size: size)
+           case .heavy:
+               return .custom("Inter_28pt-ExtraBold", size: size)
+           default:
+               return .custom("Inter_28pt-Regular", size: size)
+           }
+       }
+
     static func gilroy(size: CGFloat, weight: Font.Weight = .regular) -> Font {
-            return .custom("Gilroy", size: size)
+        switch weight {
+        case .light:
+            return .custom("Gilroy-Light", size: size)
+        case .bold, .heavy:
+            return .custom("Gilroy-ExtraBold", size: size)
+        default:
+            return .custom("Gilroy-Light", size: size)
+        }
     }
 }
+

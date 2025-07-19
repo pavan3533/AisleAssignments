@@ -13,11 +13,11 @@ struct NotesHeaderView: View {
     var body: some View {
         VStack(spacing: 6) {
             Text("Notes")
-                .font(.inter(size: 27, weight: .bold))
+                .font(.gilroy(size: 27, weight: .bold))
                 .frame(maxWidth: .infinity, alignment: .center)
 
             Text("Personal messages to you")
-                .font(.inter(size: 18, weight: .semibold))
+                .font(.gilroy(size: 18, weight: .light))
                 .foregroundColor(.black)
                 .frame(maxWidth: .infinity, alignment: .center)
         }
