@@ -7,23 +7,22 @@
 
 import Foundation
 
-// MARK: - Protocol Definition - Mock Testing
+// MARK: - OTP Service
 protocol OTPServiceProtocol {
     func verifyOTP(phone: String, code: String, completion: @escaping (Result<String, Error>) -> Void)
 }
 
-// MARK: - Concrete Implementation
 struct OTPService: OTPServiceProtocol {
     func verifyOTP(phone: String, code: String, completion: @escaping (Result<String, Error>) -> Void) {
         let params = ["number": phone, "otp": code]
-        guard let url = URL(string: "https://app.aisle.co/V1/users/verify_otp") else {
+        guard let url = URL(string: GeneralConstants.API.baseURL + GeneralConstants.Endpoints.verifyOTP) else {
             completion(.failure(URLError(.badURL)))
             return
         }
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue(GeneralConstants.Headers.json, forHTTPHeaderField: GeneralConstants.Headers.contentType)
         request.httpBody = try? JSONSerialization.data(withJSONObject: params)
 
         URLSession.shared.dataTask(with: request) { data, _, error in
@@ -36,7 +35,7 @@ struct OTPService: OTPServiceProtocol {
                     completion(.success(token))
                 } else {
                     completion(.failure(NSError(domain: "", code: -1, userInfo: [
-                        NSLocalizedDescriptionKey: "Invalid OTP or response"
+                        NSLocalizedDescriptionKey: GeneralConstants.NetworkErrorMessage.invalidOTP
                     ])))
                 }
             }

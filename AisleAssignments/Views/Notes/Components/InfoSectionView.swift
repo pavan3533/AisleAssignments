@@ -13,12 +13,12 @@ struct InfoSectionView: View {
     var body: some View {
         HStack(alignment: .bottom) {
             VStack(alignment: .leading, spacing: 6) {
-                Text("Interested In You")
+                Text(GeneralConstants.Labels.notesInfoHeaderSection)
                     .font(.gilroy(size: 22, weight: .bold))
                     .foregroundColor(.black)
                     .padding(.leading, 40)
 
-                Text("Premium members can\nview all their likes at once")
+                Text(GeneralConstants.Labels.notesInfoSubSection)
                     .font(.gilroy(size: 15, weight: .light))
                     .foregroundColor(.graySubtle)
                     .padding(.leading, 40)
@@ -27,7 +27,7 @@ struct InfoSectionView: View {
             Spacer()
 
             Button(action: {}) {
-                Text("Upgrade")
+                Text(GeneralConstants.Labels.upgradeButton)
                     .font(.gilroy(size: 15, weight: .bold))
                     .foregroundColor(.black)
                     .padding(.horizontal, 24)

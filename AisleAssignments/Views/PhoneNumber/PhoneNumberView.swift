@@ -19,30 +19,29 @@ struct PhoneNumberView: View {
                     .padding(.leading, 20)
 
                 // Title and subtitle
-                Text("Get OTP")
-                    .font(.custom("Inter_28pt-Regular", size: 16))
+                Text(GeneralConstants.Labels.getOTP)
+                    .font(.custom("Inter28pt-Regular", size: 16))
                     .foregroundColor(.black)
 
-                Text("Enter Your\nPhone Number")
+                Text(GeneralConstants.Labels.enterPhone)
                     .font(.custom("Inter28pt-Black", size: 30))
                     .foregroundColor(.black)
 
                 // Phone number input with country code
                 HStack(spacing: 8) {
                     RoundedTextField(
-                        text: .constant("+91"),
+                        text: .constant(GeneralConstants.Phone.phonePrefix),
                         width: 60,
                         isEditable: false
                     )
 
                     RoundedTextField(
-                        placeholder: "9999999999",
+                        placeholder: GeneralConstants.Phone.phonePlaceholder,
                         text: $viewModel.phoneNumber,
                         keyboardType: .numberPad,
                         width: 147
                     )
                 }
-
 
                 // Error Message
                 if let error = viewModel.errorMessage {
@@ -51,7 +50,7 @@ struct PhoneNumberView: View {
 
                 // Continue Button
                 PrimaryButton(
-                    title: "Continue",
+                    title: GeneralConstants.Labels.continueButton,
                     action: { viewModel.sendPhoneNumber() },
                     isLoading: false
                 )
@@ -59,8 +58,10 @@ struct PhoneNumberView: View {
                 Spacer()
 
                 // Navigation trigger to OTP screen
-                NavigationLink(destination: OTPView(phoneNumber: "+91\(viewModel.phoneNumber)"),
-                               isActive: $viewModel.showOTPView) {
+                NavigationLink(
+                    destination: OTPView(phoneNumber: GeneralConstants.Phone.phonePrefix + viewModel.phoneNumber),
+                    isActive: $viewModel.showOTPView
+                ) {
                     EmptyView()
                 }
             }

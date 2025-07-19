@@ -31,8 +31,8 @@ final class NotesViewModel: ObservableObject {
     }
 
     func fetchNotes() {
-        guard let token = UserDefaults.standard.string(forKey: "authToken") else {
-            errorMessage = "Missing auth token"
+        guard let token = UserDefaults.standard.string(forKey: GeneralConstants.UserDefaultsKeys.authToken) else {
+            errorMessage = GeneralConstants.ErrorMessages.missingAuthToken
             return
         }
 

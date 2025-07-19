@@ -15,7 +15,7 @@ final class OTPViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var errorMessage: String?
     @Published var showNotesView = false
-    @Published var secondsRemaining = 59
+    @Published var secondsRemaining = GeneralConstants.Timer.otpTimeoutSeconds
 
     private var timer: Timer?
     private let service: OTPServiceProtocol
@@ -37,7 +37,7 @@ final class OTPViewModel: ObservableObject {
                 switch result {
                 case .success(let token):
                     self.authToken = token
-                    UserDefaults.standard.set(token, forKey: "authToken")
+                    UserDefaults.standard.set(token, forKey: GeneralConstants.UserDefaultsKeys.authToken)
                     self.showNotesView = true
                 case .failure(let error):
                     self.errorMessage = error.localizedDescription
@@ -47,7 +47,7 @@ final class OTPViewModel: ObservableObject {
     }
 
     private func startTimer() {
-        secondsRemaining = 59
+        secondsRemaining = GeneralConstants.Timer.otpTimeoutSeconds
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
             if self?.secondsRemaining ?? 0 > 0 {

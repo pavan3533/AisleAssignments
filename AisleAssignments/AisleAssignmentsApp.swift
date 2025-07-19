@@ -11,7 +11,10 @@ import SwiftUI
 struct AisleAssignmentsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PhoneNumberView()
         }
     }
+}
+#Preview {
+    PhoneNumberView()
 }

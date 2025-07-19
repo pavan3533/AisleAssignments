@@ -13,18 +13,18 @@ final class AuthViewModel: ObservableObject {
     @Published var showOTPView = false
     @Published var isLoading = false
     @Published var errorMessage: String?
-    
+
     private var cancellables = Set<AnyCancellable>()
     private let service: AuthServiceProtocol
-    
+
     init(service: AuthServiceProtocol = APIService.shared) {
         self.service = service
     }
 
     func sendPhoneNumber() {
         isLoading = true
-        let fullNumber = "+91\(phoneNumber)"
-        
+        let fullNumber = GeneralConstants.Phone.phonePrefix + phoneNumber
+
         service.sendPhoneNumber(fullNumber)
             .sink { [weak self] completion in
                 self?.isLoading = false
@@ -35,7 +35,7 @@ final class AuthViewModel: ObservableObject {
                 if response.status {
                     self?.showOTPView = true
                 } else {
-                    self?.errorMessage = "Failed to send OTP"
+                    self?.errorMessage = GeneralConstants.ErrorMessages.failedToSendOTP
                 }
             }
             .store(in: &cancellables)

@@ -29,18 +29,17 @@ struct OTPView: View {
                 }
                 .padding(.top, 80)
 
-                Text("Enter The\nOTP")
+                Text(GeneralConstants.Labels.enterOTP)
                     .font(.custom("Inter28pt-Black", size: 30))
                     .foregroundColor(.black)
 
                 RoundedTextField(
-                    placeholder: "1234",
+                    placeholder: GeneralConstants.OTP.placeholder,
                     text: $viewModel.otpCode,
                     keyboardType: .numberPad,
                     alignment: .center,
                     width: 80
                 )
-
 
                 if let error = viewModel.errorMessage {
                     ErrorTextView(error: error)
@@ -48,11 +47,11 @@ struct OTPView: View {
 
                 HStack(spacing: 12) {
                     PrimaryButton(
-                        title: "Continue",
+                        title: GeneralConstants.Labels.continueButton,
                         action: { viewModel.verifyOTP() },
                         isLoading: viewModel.isLoading
                     )
-                    
+
                     Text(String(format: "00:%02d", viewModel.secondsRemaining))
                         .font(.custom("Inter28pt-Black", size: 14))
                         .foregroundColor(.black)
@@ -70,6 +69,7 @@ struct OTPView: View {
         }
     }
 }
+
 #Preview {
     OTPView(phoneNumber: "+91 9876543212")
 }

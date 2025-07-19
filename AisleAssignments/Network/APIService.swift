@@ -15,10 +15,10 @@ protocol AuthServiceProtocol {
 
 final class APIService: AuthServiceProtocol {
     static let shared = APIService()
-    private let baseURL = "https://app.aisle.co/V1"
-    
+    private let baseURL = GeneralConstants.API.baseURL
+
     func sendPhoneNumber(_ number: String) -> AnyPublisher<AuthResponse, Error> {
-        guard let url = URL(string: "\(baseURL)/users/phone_number_login") else {
+        guard let url = URL(string: baseURL + GeneralConstants.Endpoints.sendPhoneNumber) else {
             return Fail(error: NetworkError.invalidURL).eraseToAnyPublisher()
         }
 
@@ -26,8 +26,8 @@ final class APIService: AuthServiceProtocol {
         request.httpMethod = "POST"
         let body = ["number": number]
         request.httpBody = try? JSONSerialization.data(withJSONObject: body)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
+        request.setValue(GeneralConstants.Headers.json, forHTTPHeaderField: GeneralConstants.Headers.contentType)
+
         return URLSession.shared.dataTaskPublisher(for: request)
             .map(\.data)
             .decode(type: AuthResponse.self, decoder: JSONDecoder())
